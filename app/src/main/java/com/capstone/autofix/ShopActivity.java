@@ -171,7 +171,7 @@ public class ShopActivity extends AppCompatActivity {
                         if (image.equals("null")){
                             Picasso.get().load(AppConfig.MAIN_URL + "uploads/blank.png").resize(300, 300).centerCrop().into(shopimage);
                         }else {
-                            Picasso.get().load(AppConfig.MAIN_URL + image).resize(300, 300).centerCrop().into(shopimage);
+                            Picasso.get().load(AppConfig.MAIN_URL + "uploads/" + image).resize(300, 300).centerCrop().into(shopimage);
                         }
                         name.setText(sname);
                         location.setText(saddr);

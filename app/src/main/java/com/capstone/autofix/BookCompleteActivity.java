@@ -164,7 +164,7 @@ public class BookCompleteActivity extends AppCompatActivity {
                         bimg = item.getString("emp_img");
                         bcont = item.getString("emp_con");
                         bookcont.setText(bcont);
-                        Picasso.get().load(AppConfig.MAIN_URL + bimg).resize(300, 300).centerCrop().into(bookemp_image);
+                        Picasso.get().load(AppConfig.MAIN_URL +"uploads/"+ bimg).resize(300, 300).centerCrop().into(bookemp_image);
                     }else{
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(BookCompleteActivity.this,errorMsg,Toast.LENGTH_LONG).show();

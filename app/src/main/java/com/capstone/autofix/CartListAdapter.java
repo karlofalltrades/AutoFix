@@ -69,7 +69,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
         if (imageModelArrayList.get(position).getProdImage()=="null"){
             Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300, 300).centerCrop().into(holder.imgItem);
         }else{
-            Picasso.get().load(AppConfig.MAIN_URL + imageModelArrayList.get(position).getProdImage()).resize(300, 300).centerCrop().into(holder.imgItem);
+            Picasso.get().load(AppConfig.MAIN_URL + "uploads/" +imageModelArrayList.get(position).getProdImage()).resize(300, 300).centerCrop().into(holder.imgItem);
         }
         //
         holder.add.setTag(position);

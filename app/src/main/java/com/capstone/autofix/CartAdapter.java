@@ -70,7 +70,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         if (cart.getShopImage()=="null") {
             Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300, 300).centerCrop().into(holder.c_image);
         }else{
-            Picasso.get().load(AppConfig.MAIN_URL + cart.getShopImage()).resize(300, 300).centerCrop().into(holder.c_image);
+            Picasso.get().load(AppConfig.MAIN_URL + "uploads/" +cart.getShopImage()).resize(300, 300).centerCrop().into(holder.c_image);
         }
     }
 

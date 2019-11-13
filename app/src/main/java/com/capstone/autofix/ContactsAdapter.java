@@ -68,7 +68,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
         if (contact.getImage()=="null") {
             Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300, 300).centerCrop().into(holder.thumbnail);
         }else{
-            Picasso.get().load(AppConfig.MAIN_URL + contact.getImage()).resize(300, 300).centerCrop().into(holder.thumbnail);
+            Picasso.get().load(AppConfig.MAIN_URL +"uploads/"+ contact.getImage()).resize(300, 300).centerCrop().into(holder.thumbnail);
         }
 
 
