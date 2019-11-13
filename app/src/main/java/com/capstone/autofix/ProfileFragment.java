@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
+import com.capstone.autofix.app.AppConfig;
 import com.capstone.autofix.helper.SQLiteHandler;
 import com.capstone.autofix.helper.SessionManager;
 import com.squareup.picasso.Picasso;
@@ -22,8 +23,6 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
-
-    String URL="http://192.168.43.93/";
 
     private CircleImageView p_pic;
     private TextView p_name,p_addr,p_phone,p_user,p_email,p_id;
@@ -56,9 +55,9 @@ public class ProfileFragment extends Fragment {
         String p = user.get("photo");
         String pic;
         if (p.equals("null")){
-            pic = URL+"AutoFix/uploads/blank.png";
+            pic = AppConfig.MAIN_URL+"uploads/blank.png";
         }else {
-            pic = URL+"AutoFix/uploads/" + p;
+            pic = AppConfig.MAIN_URL +"uploads/" + p;
         }
         String name = user.get("fullname");
         String address = user.get("address");

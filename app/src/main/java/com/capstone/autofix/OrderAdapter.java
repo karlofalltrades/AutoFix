@@ -8,6 +8,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import com.capstone.autofix.app.AppConfig;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     private List<OrderItems> orderList;
     private List<OrderItems> orderListFiltered;
     private OrderAdapter.OrderAdapterListener listener;
-    String URL="http://192.168.43.93/";
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView o_id, o_qty,o_amt,o_stat,o_date,p_stat,o_shop,o_prod;
@@ -70,9 +70,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
         holder.o_shop.setText("Shop Name: "+order.getShopId());
         holder.o_prod.setText("Product Name: "+order.getProdId());
         if (order.getProdImage()=="null") {
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300, 300).centerCrop().into(holder.o_image);
+            Picasso.get().load(AppConfig.MAIN_URL +"uploads/blank.png").resize(300, 300).centerCrop().into(holder.o_image);
         }else{
-            Picasso.get().load(URL+"AutoFix/" + order.getProdImage()).resize(300, 300).centerCrop().into(holder.o_image);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/" + order.getProdImage()).resize(300, 300).centerCrop().into(holder.o_image);
         }
 
     }

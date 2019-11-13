@@ -45,7 +45,6 @@ public class ShopActivity extends AppCompatActivity {
     private TextView name,location,contact,email,rNum;
     private RatingBar ratingBar;
     private Button mekaniko,sparts,book;
-    private String IMAGE_URL ="http://192.168.43.93/AutoFix/";
     String latlong;
 
     @Override
@@ -170,9 +169,9 @@ public class ShopActivity extends AppCompatActivity {
                         String scont = item.getString("shopContact");
                         String semail = item.getString("shopEmail");
                         if (image.equals("null")){
-                            Picasso.get().load(IMAGE_URL + "uploads/blank.png").resize(300, 300).centerCrop().into(shopimage);
+                            Picasso.get().load(AppConfig.MAIN_URL + "uploads/blank.png").resize(300, 300).centerCrop().into(shopimage);
                         }else {
-                            Picasso.get().load(IMAGE_URL + "" + image).resize(300, 300).centerCrop().into(shopimage);
+                            Picasso.get().load(AppConfig.MAIN_URL + image).resize(300, 300).centerCrop().into(shopimage);
                         }
                         name.setText(sname);
                         location.setText(saddr);

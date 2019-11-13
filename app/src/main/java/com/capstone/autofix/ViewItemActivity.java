@@ -42,7 +42,6 @@ public class ViewItemActivity extends AppCompatActivity {
     TextView it_name,it_brand,it_qty,it_price;
     EditText user_qty;
     Button cart,order;
-    String URL="http://192.168.43.93/";
 
     SQLiteHandler db;
 
@@ -86,9 +85,9 @@ public class ViewItemActivity extends AppCompatActivity {
         order = (Button) findViewById(R.id.order_now);
 
         if (prodImage.equals("null")){
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300,300).centerCrop().into(it_pic);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300,300).centerCrop().into(it_pic);
         }else{
-            Picasso.get().load(URL+"AutoFix/"+prodImage).resize(300,300).centerCrop().into(it_pic);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/"+prodImage).resize(300,300).centerCrop().into(it_pic);
         }
         it_name.setText(prodName);
         it_brand.setText(prodBrand);
