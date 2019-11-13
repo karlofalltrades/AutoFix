@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <CheckBox
+        android:layout_width="35sp"
+        android:layout_height="match_parent"
+        android:id="@+id/item_cb"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardElevation="5dp">
+
+<RelativeLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:clickable="true">
+
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/item_image"
+    android:layout_width="120dp"
+    android:layout_height="90dp"
+    android:padding="4dp"
+    android:layout_centerVertical="true"/>
+
+<TextView
+    android:id="@+id/item_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="2dp"
+    android:layout_toRightOf="@+id/item_image"
+    android:text="Item Name"
+    android:textSize="25sp" />
+
+<TextView android:id="@+id/item_brand"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/item_name"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_toRightOf="@+id/item_image"
+    android:text="Item Brand"
+    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+
+<ImageView android:id="@+id/item_min"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/item_brand"
+        android:src="@drawable/ic_remove_circle_outline_black_24dp"
+        android:layout_toRightOf="@id/item_image"/>
+
+<EditText android:id="@+id/item_qty"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/item_brand"
+    android:layout_marginTop="5dp"
+    android:layout_toRightOf="@id/item_min"
+    android:text="1"
+    android:inputType="numberPassword"
+    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+
+<ImageView android:id="@+id/item_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/item_brand"
+        android:src="@drawable/ic_add_circle_outline_black_24dp"
+        android:layout_toRightOf="@id/item_qty"/>
+
+<TextView android:id="@+id/item_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/item_qty"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_toRightOf="@id/item_image"
+    android:text="Shop Contact Number"
+    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

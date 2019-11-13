@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:id="@+id/layout_cod">
+
+        <CheckBox android:id="@+id/cb_mop"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Cash On Delivery"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:textSize="15dp"
+        android:text="TOTAL: "/>
+        <TextView android:id="@+id/tv_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:text="0.00 PHP"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_cod"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:id="@+id/order_address">
+        <EditText android:id="@+id/addr_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:layout_below="@id/order_address"
+        android:layout_above="@id/btn_place"
+        android:id="@+id/recycler_checkout" />
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_below="@id/recycler_checkout"-->
+        <!--android:layout_above="@id/btn_place">-->
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="left"-->
+        <!--android:textSize="20dp"-->
+        <!--android:text="TOTAL PAYMENT"/>-->
+        <!--<TextView android:id="@+id/tv_total"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="right"-->
+        <!--android:textSize="20dp"-->
+        <!--android:text="P 0.00"/>-->
+    <!--</LinearLayout>-->
+
+    <Button android:id="@+id/btn_place"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="PLACE ORDER"
+        android:background="@color/colorPrimary"/>
+
+</RelativeLayout>
