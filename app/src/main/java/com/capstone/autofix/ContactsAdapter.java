@@ -10,6 +10,7 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.capstone.autofix.app.AppConfig;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
     private List<Employee> contactList;
     private List<Employee> contactListFiltered;
     private ContactsAdapterListener listener;
-    private String URL = "http://192.168.43.93/";
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, phone;
@@ -66,9 +66,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
         holder.phone.setText(contact.getPhone());
 
         if (contact.getImage()=="null") {
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300, 300).centerCrop().into(holder.thumbnail);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300, 300).centerCrop().into(holder.thumbnail);
         }else{
-            Picasso.get().load(URL+"AutoFix/" + contact.getImage()).resize(300, 300).centerCrop().into(holder.thumbnail);
+            Picasso.get().load(AppConfig.MAIN_URL +"uploads/"+ contact.getImage()).resize(300, 300).centerCrop().into(holder.thumbnail);
         }
 
 

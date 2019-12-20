@@ -11,6 +11,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import com.capstone.autofix.app.AppConfig;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -24,7 +25,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyShopViewHold
     private List<MyShop> myShopList;
     public static List<MyShop> myShopListFiltered;
     private OnItemClickListener mItemClickListener;
-    String URL="http://192.168.43.93/";
 
     public class MyShopViewHolder extends RecyclerView.ViewHolder{
         TextView shopname,shopAddress,shopContact,shopEmail,shopDist;
@@ -70,9 +70,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyShopViewHold
         holder.shopEmail.setText(myShop.getShopEmail());
         holder.shopDist.setText(myShop.getDistance()+" km");
         if (myShop.getImage()=="null") {
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300, 300).centerCrop().into(holder.shop_image);
+            Picasso.get().load(AppConfig.MAIN_URL +"uploads/blank.png").resize(300, 300).centerCrop().into(holder.shop_image);
         }else{
-            Picasso.get().load(URL+"AutoFix/" + myShop.getImage()).resize(300, 300).centerCrop().into(holder.shop_image);
+            Picasso.get().load(AppConfig.MAIN_URL +"uploads/" + myShop.getImage()).resize(300, 300).centerCrop().into(holder.shop_image);
         }
     }
 

@@ -49,7 +49,6 @@ public class EditProfileActivity extends AppCompatActivity {
     private String cid,image;
     private Bitmap bitmap;
     private Uri uriImage;
-    private String IMAGE_URL ="http://192.168.43.93/AutoFix/uploads/";
 
     private SQLiteHandler db;
 
@@ -88,9 +87,9 @@ public class EditProfileActivity extends AppCompatActivity {
         String p = user.get("photo");
         String pic;
         if (p.equals("null")){
-            pic = IMAGE_URL+"blank.png";
+            pic = AppConfig.MAIN_URL+"uploads/blank.png";
         }else {
-            pic = IMAGE_URL + p;
+            pic = AppConfig.MAIN_URL +"uploads/"+ p;
         }
         String name = user.get("fullname");
         String address = user.get("address");
@@ -220,7 +219,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         db.updateDetails(fname,addr,contact,username,email,cid,photo);
 
                         imageView = (CircleImageView) findViewById(R.id.current_image);
-                        Picasso.get().load(IMAGE_URL+""+photo).resize(300,300).centerCrop().into(imageView);
+                        Picasso.get().load(AppConfig.MAIN_URL+"uploads/"+photo).resize(300,300).centerCrop().into(imageView);
                         Toast.makeText(getApplicationContext(),"Profile successfully updated!",Toast.LENGTH_LONG).show();
 //                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
 //                        startActivity(intent);

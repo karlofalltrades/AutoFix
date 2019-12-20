@@ -8,6 +8,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import com.capstone.autofix.app.AppConfig;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
     private List<Item> itemList;
     private List<Item> itemListFiltered;
     private ItemAdapter.ItemAdapterListener listener;
-    String URL="http://192.168.43.93/";
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, brand, qty, price;
@@ -70,9 +70,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.price.setText(items.getProdPrice());
 
         if (items.getProdImage()=="null") {
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300, 300).centerCrop().into(holder.thumbnail);
+            Picasso.get().load(AppConfig.MAIN_URL +"uploads/blank.png").resize(300, 300).centerCrop().into(holder.thumbnail);
         }else{
-            Picasso.get().load(URL+"AutoFix/" + items.getProdImage()).resize(300, 300).centerCrop().into(holder.thumbnail);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/" + items.getProdImage()).resize(300, 300).centerCrop().into(holder.thumbnail);
         }
 
 

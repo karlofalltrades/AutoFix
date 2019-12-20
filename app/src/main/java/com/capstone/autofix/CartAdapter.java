@@ -8,6 +8,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import com.capstone.autofix.app.AppConfig;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
     private List<Cart> cartList;
     private List<Cart> cartListFiltered;
     private CartAdapter.CartAdapterListener listener;
-    String URL="http://192.168.43.93/";
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView c_name, c_addr, c_cont,c_email;
@@ -68,9 +68,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         holder.c_cont.setText(cart.getShopContact());
         holder.c_email.setText(cart.getShopEmail());
         if (cart.getShopImage()=="null") {
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300, 300).centerCrop().into(holder.c_image);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300, 300).centerCrop().into(holder.c_image);
         }else{
-            Picasso.get().load(URL+"AutoFix/" + cart.getShopImage()).resize(300, 300).centerCrop().into(holder.c_image);
+            Picasso.get().load(AppConfig.MAIN_URL + "uploads/" +cart.getShopImage()).resize(300, 300).centerCrop().into(holder.c_image);
         }
     }
 

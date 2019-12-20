@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import androidx.annotation.NonNull;
+
+import com.capstone.autofix.app.AppConfig;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -34,7 +36,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private SQLiteHandler db;
     private SessionManager session;
-    String URL="http://192.168.43.93/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +66,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         String p = user.get("photo");
         String pic;
         if (p.equals("null")){
-            pic = URL+"AutoFix/uploads/blank.png";
+            pic = AppConfig.MAIN_URL +"uploads/blank.png";
         }else {
-            pic = URL+"AutoFix/uploads/" + p;
+            pic = AppConfig.MAIN_URL +"uploads/" + p;
         }
         String name = user.get("fullname");
         String email = user.get("email");

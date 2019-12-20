@@ -35,7 +35,6 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
     public static ArrayList<CartListModel> imageModelArrayList;
     private Context context;
     private boolean isSelected;
-    String URL="http://192.168.43.93/";
     String updateQty;
 
     public CartListAdapter(Context context, ArrayList<CartListModel> imageModelArrayList){
@@ -68,9 +67,9 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
         holder.tvQty.setText(imageModelArrayList.get(position).getCartQuantity());
         holder.tvPrice.setText(imageModelArrayList.get(position).getProdPrice());
         if (imageModelArrayList.get(position).getProdImage()=="null"){
-            Picasso.get().load(URL+"AutoFix/uploads/blank.png").resize(300, 300).centerCrop().into(holder.imgItem);
+            Picasso.get().load(AppConfig.MAIN_URL+"uploads/blank.png").resize(300, 300).centerCrop().into(holder.imgItem);
         }else{
-            Picasso.get().load(URL+"AutoFix/" + imageModelArrayList.get(position).getProdImage()).resize(300, 300).centerCrop().into(holder.imgItem);
+            Picasso.get().load(AppConfig.MAIN_URL + "uploads/" +imageModelArrayList.get(position).getProdImage()).resize(300, 300).centerCrop().into(holder.imgItem);
         }
         //
         holder.add.setTag(position);
